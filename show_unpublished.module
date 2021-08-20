@@ -1,0 +1,9 @@
+<?php
+
+/**
+ * Implements hook_entity_type_alter().
+ */
+function show_unpublished_entity_type_alter(array &$entity_types) {
+  /** @var $entity_types \Drupal\Core\Entity\EntityTypeInterface[] */
+  $entity_types['node']->setHandlerClass('access', '\Drupal\show_unpublished\Handler\ShowUnpublishedAccessControlHandler');
+}
